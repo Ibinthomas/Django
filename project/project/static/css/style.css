@@ -1,0 +1,88 @@
+
+
+body {
+    background-color: #00000073;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    padding-left: 50%;
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    justify-content: center;
+}
+
+.container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+
+.input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+}
+
+.input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.btn {
+    background-color: #ed0d0d;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 107%;
+    cursor: pointer;
+    font-size: 14px; 
+}
+
+.btn:hover {
+    background-color: #d0ff01;
+}
+
+.second {
+    width: 500px;
+    height: 500px;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #000000;
+}
+
+th, td {
+    color: #000000;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}

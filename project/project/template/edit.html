@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="id">ID</label>
+        <input type="text" class="input" placeholder="Enter your ID" name="id" value="{{task.id}}">
+        <label for="task">Task</label>
+        <input type="text" class="input" placeholder="Enter the Task" name="task" value="{{task.task}}">
+
+        <input class="btn" type="submit" value="Submit">
+
+    </form>
+
+
+</body>
+</html>

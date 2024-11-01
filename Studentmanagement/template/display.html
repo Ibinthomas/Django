@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/style.css '%}">
+</head>
+<body>
+
+    <form action="add_std" method="post">
+        {% csrf_token %}
+
+        <input type="number" placeholder="roll_no" name="roll">
+        <input type="text" placeholder="name" name="name">
+        <input type="number" placeholder="age" name="age">
+        <input type="email" placeholder="email" name="email">
+        <input type="tel" placeholder="phone no" name="phno">
+        <input type="submit" value="add">
+
+
+    </form>
+    <table>
+        <tr>
+            <th>roll_no</th>
+            <th>Name </th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>phone number</th>
+
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{i.roll_no}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.phone}}</td>
+
+            <td>
+                <a href="edit_std/{{i.pk}}">edit</a>
+                <a href="delete_std/{{i.pk}}">delete</a>
+            </td>
+
+            
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

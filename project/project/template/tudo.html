@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1><center>Welcome</center></h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="id">ID</label>
+            <input type="text" class="input" placeholder="Enter your ID" name="id">
+            <label for="task">Task</label>
+            <input type="text" class="input" placeholder="Enter the Task" name="task">
+
+            <input class="btn" type="submit" value="Submit">
+
+        </form>
+    </div>
+    <div class="second">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Task</th>
+                <th>action</th>
+            </tr>
+            {% for i in tudo1 %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.task}}</td>
+                <td><a href="edit/{{i.id}}">edit</a>
+                <a href="delete/{{i.id}}">delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+    
+</body>
+</html>

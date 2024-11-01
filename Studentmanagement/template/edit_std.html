@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+
+        <input type="number" placeholder="roll_no" name="roll" value="{{data.roll_no}}">
+        <input type="text" placeholder="name" name="name" value="{{data.name}}">
+        <input type="number" placeholder="age" name="age"  value="{{data.age}}">
+        <input type="email" placeholder="email" name="email"  value="{{data.email}}">
+        <input type="tel" placeholder="phone no" name="phno"  value="{{data.phone}}">
+        <input type="submit" value="edit">
+
+
+    </form>
+</body>
+</html>
