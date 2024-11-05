@@ -110,16 +110,43 @@ def user_home(req):
         return render(req,'user/user_home.html',{'products':product})
     
 def views_pro(req,id):
+    log_user=User.objects.get(username=req.session['user'])
     product=products.objects.get(pk=id)
-    return render(req,'user/views_pro.html',{'products':product})
+    try:
+        cart=Cart.objects.get(product=product,user=log_user)
+    except:
+        cart=None
+    return render(req,'user/views_pro.html',{'products':product,'cart':cart})
 
-def add_to_cart(req,pid):
+def add_cart(req,pid):
     product=products.objects.get(pk=pid)
     print(product)
     user=User.objects.get(username=req.session['user'])
     print(user)
-    data=Cart.objects.create(user=user,prodect=product)
+    data=Cart.objects.create(user=user,product=product)
     data.save
+    return redirect(cart_display)
 
 def cart_display(req):
-    return render(req,'cart_display.html')
+    log_user=User.objects.get(username=req.session['user'])
+    data=Cart.objects.filter(user=log_user)
+    return render(req,'user/cart_display.html',{'data':data})
+
+def delete_cart(req,id):
+    data=Cart.objects.get(pk=id)
+    data.delete()
+    return redirect(cart_display)
+
+def buy_pro(req,id):
+    product=products.objects.get(pk=id)
+    user=User.objects.get(username=req.session['user'])
+    price=product.offer_price
+    data=Buy.objects.create(user=user,product=product,price=price)
+    data.save()
+    return redirect(user_home)
+
+def user_view_booking(req):
+    user=User.objects.get(username=req.session['user'])
+    data=Buy.objects.filter(user=user)
+    return render(req,'user/view_booking.html',{'data':data})
+

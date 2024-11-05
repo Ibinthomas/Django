@@ -20,19 +20,14 @@
                 <a class="nav-link" href="#">home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">best sellers</a>
+                <a class="nav-link" href="cart_display">Cart</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="view_booking">Booking</a>
+              </li> 
+              <li class="nav-item">
                 <a class="nav-link" href="logout">Logout</a>
-              </li>  
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Link</a></li>
-                  <li><a class="dropdown-item" href="#">Another link</a></li>
-                  <li><a class="dropdown-item" href="#">A third link</a></li>
-                </ul>
-              </li>
+              </li> 
             </ul>
           </div>
         </div>
@@ -48,12 +43,10 @@
                     <div class="card" style="width:400px">
                         <img class="card-img-top" src="{{pro.img.url}}" alt="Card image" style="width:100%; height: 400px;">
                         <div class="card-body">
-                        <h4 class="card-title">{{pro.name}}</h4>
-                        <p class="card-text">{{pro.price}}</p>
-                        <p class="card-text">{{pro.offer_price}}</p>
-                        <a href="edit_pro/{{pro.pk}}" class="btn btn-primary">edit</a>
-                        <a href="delete_pro" class="btn btn-primary">delete</a>
-                        </div>
+                          <h4 class="card-title">{{pro.name}}</h4>
+                          <p class="card-text">{{pro.price}}</p>
+                          <p class="card-text">{{pro.offer_price}}</p>                     
+                      </div>
                     </div>
                 </a>
 
