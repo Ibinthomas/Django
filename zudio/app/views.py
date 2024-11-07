@@ -102,6 +102,11 @@ def delete_pro(req,id):
     data.delete()
     return redirect(shop_home)
 
+def admin_view_booking(req):
+    booking=Buy.objects.all()[::-1]
+    print(booking)
+    return render(req,'shop/admin_booking.html',{'data':booking})
+
 #---------------uname----------------------
 
 def user_home(req):

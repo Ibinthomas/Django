@@ -13,6 +13,8 @@ path('shop_home',views.shop_home),
 path('add_pro',views.add_product),
 path('edit_pro/<id>',views.edit_pro),
 path('delete_pro/<id>',views.delete_pro),
+path('booking',views.admin_view_booking),
+
 
 
 #-------------user---------------------+
@@ -23,6 +25,7 @@ path('cart_display',views.cart_display),
 path('delete_cart/<id>',views.delete_cart),
 path('buy_pro/<id>',views.buy_pro),
 path('view_booking',views.user_view_booking),
+
 
 
 
