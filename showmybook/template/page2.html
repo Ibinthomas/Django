@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <nav id="navbar" class="navbar  bg-body-teriary fixed-top content d-none d-md-block">
+        <div class=" container-fluid">
+            <form class="d-flex justify-content-center" role="search" style="width: 600px;">
+                <img id="logo"  src="img/logo.png" alt=""height="55px"></a>
+                <input id="search"  class="form-control me-2" type="search" placeholder="     Search for Movies,Events,Plays,Sports and Activities" aria-label="Search">
+            </form>
+
+
+            
+            <div id="dropdown" class="dropdown ">            
+                <a  class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Kochi
+                </a>
+                <ul class="dropdown-menu" style="width: 50vw; left: calc(60% - 35vw);">
+                    <li class="mb-3"><i id="droplogo"  class="  fa-solid fa-magnifying-glass" aria-hidden="false"></i>
+                        <input  class="form-control me-2" type="search" placeholder="     Search for Your City" aria-label="Search"></li>
+                    <li class="mb-3"><a class=" text-dark  text-decoration-none" href="#"><i class="fa-solid fa-location-dot  me-2">
+
+                    </i>Detect my location</li></a>
+                    <b class="d-flex justify-content-center mb-3">Popluar Cities</b>
+                    <div class="row">
+                        <div style="margin-left: 30px;" class="col">
+                                <p class="text-black">kochi</p>
+                            </a>
+                        </div>
+                        <div class="col">
+                                <p class="text-black">Chennai</p>
+                            </a>
+                        </div>
+                        <div class="col">
+                                <p class="text-black">Mumbai</p>
+                            </a>
+                        </div>
+                        <div class="col">
+                                <p class="text-black">Hyderabad</p>
+                            </a>
+                        </div>
+                        <div class="col">
+                                <p class="text-black">Banglore</p>
+                            </a>
+                        </div>
+
+                    </div>
+                    <b class="d-flex text-dark justify-content-center mb-3">View All Cities</b>
+                </ul>    
+            </div>
+        
+         <button id="sign_in" class="btn btn-danger" type="submit">Sign in</button>
+            <button id="canva" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           
+        </div>
+                        
+    </nav>
+
+    <nav id="navbar2" class=" second-navbar mt-5 d-none d-md-block">
+        <div id="navrow" class="row container  pt-2">
+            <div class="navtext col-auto ">
+                <p class="text-black">Movies</p>
+            </div>
+            <div class="navtext col-auto ">
+                <p class="text-black">Steam</p>
+            </div>
+            <div class="navtext col-auto ">
+                <p class="text-black">Events</p>
+            </div>
+            <div class="navtext col-auto ">
+                <p class="text-black">Plays</p>
+            </div>
+            <div class="navtext col-auto ">
+                <p class="text-black">Sports</p>
+            </div>
+            <div class="navtext col-auto ">
+                <p class="text-black">Activities</p>
+            </div>
+            <div id="navrow2" class="col-auto ms-auto">
+                <p class="text-black">ListYourShow</p>
+            </div>
+            <div class="navtext col-auto ">
+                <p class="text-black">Corparates</p>
+            </div>
+            <div class="navtext col-auto ">
+                <p class="text-black">Offers</p>
+            </div>
+            <div class="navtext col-auto ">
+                <p class="text-black">Gift Cards</p>
+            </div>
+        </div>
+    </nav>
+
+    <div id="main1" class="image-fluid d-flex  " style="background-image: url({{data.back_img.url}});">
+        <div id="main2" class=" row align-items-center">
+            <!-- Movie Card 1 -->
+            <div class="col-md-4">
+                <div class="movie-card">
+                    <img src="{{data.for_img.url}}" alt="" style="width: 400px ;">
+                    <div class="movie-details">
+                        <div class="movie-stats" style="background-color: #edeaea">
+                            <!-- <span> Releasing on 25 Oct, 2024</span> -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="main3" class="col-md-8">
+                <div class="movieinfo">
+                    <div class="movietitle"><h1>{{data.movie_name}}</h1></div>
+                    <div id="rating" class="d-flex align-items-center">
+                        <span id="star" class="star text-white"><h6>&nbsp;&nbsp;👍121K are interested ? </h6><br><h6>are you intrested in watching these movie</h6></span>
+                        <button id="ratebtn" class="btn btn-outline-secondary rate-btn ms-auto"><b>I'am interested</b>&nbsp;&nbsp;</button>
+                    </div>
+                    <div class="lang row gap-4 mt-3">
+             
+                        <div id="lang" class="col-9"><span class="language">2D,4DX 3D,IMAX 3D,3D4X,IMAX 2D</span></div>
+                        <div id="lang" class="col-9"><span class="language">Malayalam, Hindi, Tamil, Kannada, Telugu</span></div>
+                        <div id="lang" class="col-9"><span class="language">{{data.time}}</span></div>
+                        <div id="lang" class="col-9"><span class="language">{{data.category}}</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="sample container p-5">
+        <h3><b>About the movie</b></h3>
+        <span>Set in Northern Kerala across the years 1900, 1950, and 1990, this epic tale follows three generations of heroes Maniyan,</span>
+        <span>Kunjikelu, and Ajayan as they strive to protect the land's most vital treasure.</span>
+    </div>
+
+    <div id="demo" class="carousel slide container" data-bs-ride="false">
+        <h4><b>Cast</b></h4>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+
+                <div class="d-flex gap-2">
+                    <div>
+                        <img src="media/c1.avif" class=" d-inline rounded-circle" style="width:165px;" alt="">
+                        <figcaption style="text-align: center;">Tovino Thomas</figcaption> 
+                    </div>
+                    <div>
+                        <img src="media/c2.avif" class=" d-inline rounded-circle" style="width:165px;" alt="">
+                        <figcaption style="text-align: center;">Krithi</figcaption>
+                    </div>
+                    <div>
+                        <img src="media/c3.avif" class=" d-inline rounded-circle" style="width:165px;" alt="">
+                            <figcaption style="text-align: center;">Aiswarya</figcaption>
+                    </div> 
+                    <div>
+                        <img src="media/c4.avif" class=" d-inline rounded-circle" style="width:165px;" alt=""> 
+                        <figcaption style="text-align: center;">Surabhi</figcaption>
+                    </div>
+                    <div>
+                        <img src="media/c5.avif" class=" d-inline rounded-circle" style="width:165px;" alt="">
+                            <figcaption style="text-align: center;">Basil</figcaption>
+                    </div>
+                    <div> 
+                        <img src="media/c6.avif" class=" d-inline rounded-circle" style="width:165px;" alt="">
+                        <figcaption style="text-align: center;">Harish</figcaption>
+                    </div>
+                    <div> 
+                        <img src="media/c7.avif" class=" d-inline rounded-circle" style="width:165px;" alt="">
+                        <figcaption style="text-align: center;">Madhupal</figcaption> 
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="d-flex gap-2">
+                <div>
+                <img src="media/c8.avif" class=" d-inline rounded-circle" style="width:165px;" alt="">
+                <figcaption style="text-align: center;">Rohini</figcaption> 
+               </div>
+               <div>
+                <img src="media/c9.avif" class=" d-inline rounded-circle" style="width:165px;" alt="">
+                <figcaption style="text-align: center;">Aju varghese</figcaption>
+               </div>
+               <div>
+                <img src="media/c10.avif" class=" d-inline rounded-circle" style="width:165px;" alt="">
+                <figcaption style="text-align: center;">Kabir</figcaption>
+                </div> 
+                <div>
+                <img src="media/c11.avif" class=" d-inline rounded-circle" style="width:165px;" alt=""> 
+                <figcaption style="text-align: center;">Jagadeesh</figcaption>
+                </div>
+                <div>
+                <img src="media/c12.avif" class=" d-inline rounded-circle" style="width:165px;" alt="">
+                <figcaption style="text-align: center;">Sudheesh</figcaption>
+                </div>
+                <div> 
+                <img src="media/c13.avif" class=" d-inline rounded-circle" style="width:165px;" alt="">
+                <figcaption style="text-align: center;">Nisthar</figcaption>
+                </div>
+                <div> 
+                    <img src="media/c14.avif" class=" d-inline rounded-circle" style="width:165px;" alt="">
+                    <figcaption style="text-align: center;">Maala</figcaption>
+                    </div>
+          </div>   
+  
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+    </div>
+    <hr class="mx-auto d-block" width="100%">
+    <div class="sample container p-5">
+        <h3 class="mb-4 container " ><b>Crew</b></h3>
+    
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-6 g-4">
+            <div class="col">
+                <img src="media/cr1.avif" class="img-fluid rounded-circle" alt="">
+                <figcaption style="text-align: center;">Jithin Laal</figcaption> 
+                <figcaption class="text-secondary" style=" text-align: center;">Director</figcaption> 
+    
+            </div>
+            <div class="col">
+                <img src="media/cr2.avif" class="img-fluid rounded-circle" alt="">
+                <figcaption style="text-align: center;">Listin Stephen</figcaption>
+                <figcaption class="text-secondary" style=" text-align: center;">Producer</figcaption> 
+            </div>
+            <div class="col">
+                <img src="media/cr3.avif" class="img-fluid rounded-circle" alt="">
+                <figcaption style="text-align: center;">Suijith Nambiar</figcaption>
+                <figcaption class="text-secondary" style=" text-align: center;">Writer</figcaption> 
+            </div> 
+            <div class="col">
+                <img src="media/cr4.avif" class="img-fluid rounded-circle" alt=""> 
+                <figcaption style="text-align: center;">Dhibu Ninan</figcaption>
+                <figcaption class="text-secondary" style=" text-align: center;">Musician</figcaption> 
+            </div>
+            <div class="col">
+                <img src="media/cr5.avif" class="img-fluid rounded-circle" alt="">
+                <figcaption style="text-align: center;">Jomon T</figcaption>
+                <figcaption class="text-secondary" style=" text-align: center;">Cinematography</figcaption> 
+            </div>
+            <div class="col"> 
+                <img src="media/cr6.avif" class="img-fluid rounded-circle" alt="">
+                <figcaption style="text-align: center;">Shameer</figcaption>
+                <figcaption class="text-secondary" style=" text-align: center;">Editor</figcaption> 
+            </div>
+        </div>
+        <hr class="mx-auto d-block" width="100%">
+    </div>
+
+    <footer class="bg-dark text-white pt-5">
+        <div class="container">
+
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <p class="lead">
+                        <i class="fa-solid fa-ticket"></i> List your Show
+                        <p class="d-block">Got a show, event, activity or a great experience? Partner with us & get listed on BookMyShow</p>
+                    </p>
+                </div>
+                <div class="col-md-2 text-center">
+                    <i class="fa-solid fa-headset"></i>
+                    <p>24/7 CUSTOMER CARE</p>
+                </div>
+                <div class="col-md-2 text-center">
+                    <i class="fa-solid fa-ticket"></i>
+                    <p>RESEND BOOKING CONFIRMATION</p>
+                </div>
+                <div class="col-md-2 text-center">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>SUBSCRIBE TO THE NEWSLETTER</p>
+                </div>
+            </div>
+
+            <div class="text-end mb-4">
+                <button class="btn btn-danger">Contact today!</button>
+            </div>
+    
+            <div class="row mb-4">
+
+                <div class="col-md-3">
+                    <h5>MOVIES NOW SHOWING IN KOCHI</h5>
+                    <p><a href="#" class="text-white">Vettaiyan</a> | <a href="#" class="text-white">A.R.M</a> | <a href="#" class="text-white">Kishkindha Kaandam</a> | <a href="#" class="text-white">Venom: The Last Dance</a> | <a href="#" class="text-white">Joker: Folie a Deux</a></p>
+                </div>
+    
+                <div class="col-md-3">
+                    <h5>UPCOMING MOVIES IN KOCHI</h5>
+                    <p><a href="#" class="text-white">Vettaiyan - The Hunter</a> | <a href="#" class="text-white">Andaaz</a> | <a href="#" class="text-white">Yek Number</a> | <a href="#" class="text-white">Super/Man: The Christopher Reeve Story</a></p>
+                </div>
+    
+                <div class="col-md-3">
+                    <h5>MOVIES BY GENRE</h5>
+                    <p><a href="#" class="text-white">Drama Movies</a> | <a href="#" class="text-white">Action Movies</a> | <a href="#" class="text-white">Thriller Movies</a> | <a href="#" class="text-white">Comedy Movies</a></p>
+                </div>
+    
+                <div class="col-md-3">
+                    <h5>MOVIES BY LANGUAGE</h5>
+                    <p><a href="#" class="text-white">Movies in Malayalam</a> | <a href="#" class="text-white">Movies in English</a> | <a href="#" class="text-white">Movies in Hindi</a> | <a href="#" class="text-white">Movies in Tamil</a></p>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <h5>SPORTS EVENTS IN KOCHI</h5>
+                    <p><a href="#" class="text-white">Running</a> | <a href="#" class="text-white">Kabaddi</a> | <a href="#" class="text-white">Athletics</a> | <a href="#" class="text-white">Motorsports</a></p>
+                </div>
+                    <div class="col-md-9">
+                    <h5>EVENTS IN TOP CITIES</h5>
+
+                </div>
+            </div>
+        </div>
+
+        
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
