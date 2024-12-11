@@ -11,7 +11,7 @@ def shop_login(req):
     if 'shop' in req.session:
         return redirect(shop_home)
     if 'user' in req.session:
-        return redirect(user_home)
+        return redirect(user_home) 
     else:
         if req.method=='POST':
             uname=req.POST['uname']

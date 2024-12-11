@@ -10,4 +10,5 @@ def index(req):
 
 def view_movie(req,id):
     data=movie.objects.get(pk=id)
-    return render(req,'page2.html',{'data':data})
+    member=members.objects.filter(movie=data)
+    return render(req,'page2.html',{'data':data, 'member':member})

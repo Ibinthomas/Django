@@ -142,7 +142,20 @@
         <span>Kunjikelu, and Ajayan as they strive to protect the land's most vital treasure.</span>
     </div>
 
-    <div id="demo" class="carousel slide container" data-bs-ride="false">
+
+    <div class="container">
+        <div class="bg-info">
+            <h1>Cast</h1>
+            {% for i in member %}
+            {% if i.cast %}
+            <h3>{{i.name}}</h3>
+            <img src="{{i.img.url}}" alt="">
+            {% endif %}
+            {% end for %}
+        </div>
+    </div>
+
+    <!-- <div id="demo" class="carousel slide container" data-bs-ride="false">
         <h4><b>Cast</b></h4>
 
         <div class="carousel-inner">
@@ -212,7 +225,7 @@
           </div>   
   
           </div>
-        </div>
+        </div> -->
         <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
           </button>
